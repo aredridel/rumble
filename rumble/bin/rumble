@@ -1,0 +1,79 @@
+#!/usr/bin/ruby -w
+
+begin
+
+require 'rumble'
+require 'optparse'
+
+include Rumble
+
+@@config = Configuration.new
+
+def config
+	@@config
+end
+
+$DELIVERY_ADDRESSES = []
+
+configfiles = []
+actions = []
+
+opts = OptionParser.new do |o|
+	o.on "--newlist LIST", "-n LIST", "Creates a new list named LIST" do |arg|
+		actions << [:newlist, arg]
+	end
+	o.on "--unsubscribe USER LIST", "-u USER LIST", "Unsubscribes USER to LIST" do |user,list|
+		actions << [:unsubscribe, user, list]
+	end
+	o.on "--subscribe USER LIST", "-s USER LIST", "Subscribes USER to LIST" do |user,list|
+		actions << [:subscribe, user, list]
+	end
+	o.on "--config FILE", "-c FILE", "Loads configuration in FILE" do |file|
+		configfiles << file
+	end
+	o.on "--delivered-to ADDRESS", "-d ADDRESS", "Sets delivery address to ADDRESS" do |address|
+		$DELIVERY_ADDRESSES << address
+	end
+	o.on "-v", "--[no-]verbose", "Enables debugging" do |v|
+		config.verbose = v
+	end
+end
+
+opts.parse(ARGV)
+
+if config.verbose
+	p $DELIVERY_ADDRESSES
+end
+
+
+if configfiles.size == 0
+	configfiles << "/etc/mail/rumble.conf"
+end
+
+configfiles.each do |file|
+	begin
+		f = File.read(file)
+		eval(f)
+	rescue
+	end
+end
+
+config.store = MailingListDirectory.new(config)
+
+if actions.size == 0
+	actions << [:processmessage, STDIN]
+end
+
+actions.each do |action|
+	config.store.send(*action)
+end
+
+rescue SystemExit => e
+	raise
+rescue UserError => e
+	puts "Error: #{e.message}"
+	exit 1
+rescue Exception => e
+	puts "An error occurred: #{e}\n\t#{e.backtrace.join("\t\n")}"
+	exit 1
+end

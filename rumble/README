@@ -1,0 +1,43 @@
+Rumble is a simple, highly object-oriented mailing list manager, intended
+first to interface well with Exim, and secondly with any MTA. The letters in
+the name contain enough to make an acronym with words like "Ruby", "Mailing
+List" and "Manage". The rest is your imagination.
+
+The single entry point in normal usage is the program "rumble", usually
+installed to /usr/bin. Invoked with no arguments, it expects a mail message
+on standard input, which it will deliver to the list it is addressed to. If
+the message is undeliverable, it will generate a failure notice on standard
+output.
+
+The rumble executable accepts the following options:
+
+	--subscribe address lists
+	--unsubscribe address lists
+	--newlist list
+
+Rumble is configured by a configuration file, /etc/mail/rumble.conf by
+default.  The configuration file is a ruby script, so much is possible.
+However, the basic configuration is performed with properties on the config
+object like this:
+
+	config.datadir = '/var/lib/rumble'
+
+The properties available are documented in the Rumble::Configuration class.
+You probably need to set these:
+
+	config.smtpserver =  'yourmailhost'
+	config.smtpport = 587
+	config.smtpauthmethod = :login
+	config.smtpusername = 'username'
+	config.smtppassword = 'password'
+
+And if your data directory is some place odd, or you have multiple
+instances of Rumble handling different sets of lists, you need to set
+
+	config.datadir = '/path/to/rumble/data'
+
+Authorization to manage rumble is granted with operating system permissions.
+Under Unix, create a group "rumble", and add users you wish to let
+administer mailing lists to the group. Make Rumble's directory writable by
+that group.  If you need more flexibility, the policy is yours to decide.
+Rumble will not complain or try to make you do things its way.

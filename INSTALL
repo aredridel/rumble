@@ -1,0 +1,53 @@
+Installing Rumble should be easy. It uses Minero Aoki's setup.rb, so setup
+is similar to most ruby packages:
+
+	ruby setup.rb config
+	ruby setup.rb setup
+	ruby setup.rb install (this one as root)
+
+Setting permissions is up to you. Rumble enforces no policy of its own.
+
+After installing the program files, you must connect Rumble to your MTA. I
+use exim, so that's what's documented at the moment.
+
+There's more than one way to set up Rumble. A single list can be created
+with a pipe setup in your aliases, like this:
+
+	rumble: "|/usr/bin/rumble"
+	mylist-l: "|/usr/bin/rumble"
+	mylist-l-request: "|/usr/bin/rumble"
+
+That's enough to get rumble itself going, and both the list and list request
+addresses.  Now, tell Rumble about the list:
+
+	rumble --newlist mylist-l@example.com
+
+That's all there is to it.  You can subscribe and unsubscribe users with the
+commandline, too:
+
+	rumble --subscribe joe@example.org mylist-l@example.com
+
+That's the simple way. It's not very scalable, though, if you have many
+lists. For that sort of thing, you want to use a dedicated exim router, and
+pick a set of addresses that will be passed on to Rumble. In my case, I use
+a subdomain for the lists, so I have exim direct all the mail for that
+domain to Rumble, and lets Rumble reject messages to invalid addresses.
+
+	begin routers
+
+	rumble:
+		domain = lists.example.com
+		transport = rumble
+
+	begin transports
+
+	rumble:
+		driver = pipe
+		command = "/usr/bin/rumble"
+		user = rumble
+		group = rumble
+
+
+Enjoy.
+
+

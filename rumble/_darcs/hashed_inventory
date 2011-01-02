@@ -1,0 +1,107 @@
+pristine:0000000904-0c5323bbef7bfa415d6de96ef3cff293f39ee93568956f2d8451ac478ce24dad
+[Tailorization of /projects/ruby/rumble
+tailor@betelgeuse.theinternetco.net**20050611212401
+ Import of the upstream sources from
+ 
+   Repository: http://svn.theinternetco.net
+   Module:     /projects/ruby/rumble
+   Revision:   396
+ 
+] 
+hash: 0000041536-80855a68b7e53589297ae554734df548a1e955f7ac05f2352e4f4bb0b647019d
+[Add Rakefile
+Aredridel <aredridel@nbtsc.org>**20060321042221] 
+hash: 0000001691-e7bf7e623d88fe6574dbc73c8d58f00623e8429ca2fd3dce2e6e01b83c4e51f4
+[De-kashmir Rakefile
+Aredridel <aredridel@nbtsc.org>**20060321042851] 
+hash: 0000000251-aca7aad1ffc80ef72c0bbc5cc7f63992fbae89f564176c3d8d2523efabbbe379
+[Move tests into tests/
+Aredridel <aredridel@nbtsc.org>**20060321043039] 
+hash: 0000000132-9104985654de7c154a020728483507e4e4358fb5bada30af44a5c37ea2f2ed05
+[Major renovation
+Aredridel <aredridel@nbtsc.org>**20060321082551
+ 
+ - Substitute Gurgitate-Mail for TMail
+ - Add verbose command line switch for debugging
+ - Add MetaMailingList class
+ - Add replyto and subjectmangle options per list
+ - test
+ - add Rakefile infrastructure
+ 
+] 
+hash: 0000006468-f3d831803d82a73cad845466e8301cd75e44b684acc50e6c607a93ecfc20dea4
+[Remove PATHCONV file from old setup.rb style
+Aredridel <aredridel@nbtsc.org>**20060321083014] 
+hash: 0000000155-bba16f3493d8b9c745ea51650438555cac69cbe19d39aa870ce276d5145a2d8e
+[Handle addresses Foo <bar> in To:
+Aredridel <aredridel@nbtsc.org>**20060321205310] 
+hash: 0000000268-9090b698ae45d48ffcc12334a471b2c16889e08c564e3f50556ce7f7bc43af95
+[Make Foo <bar> really work
+Aredridel <aredridel@nbtsc.org>**20060322074948] 
+hash: 0000000305-8fe57be89e62a5ad107fe0dc6d21f9f7d449264eda17ecef0bc0f125647ec9a9
+[Simplify shebang
+Aredridel <aredridel@nbtsc.org>**20060322075213] 
+hash: 0000000127-bad5a97383e1334b49d3ad484c9c443ea98193b4cb962033474cf9924ee4b9e9
+[Remove debugging
+Aredridel <aredridel@nbtsc.org>**20060322174903] 
+hash: 0000000114-fe737ad3cadd806f26d8751292c1f77ae0e1b7efaaf361eb3b372c49cd97e069
+[update TODO
+Aredridel <aredridel@nbtsc.org>**20060325042954] 
+hash: 0000000272-7ec6c4b57b34d8e752d4784f8e8652f5abf1a839b2b83bacbadef237405aa6e1
+[Add Todos
+Aredridel <aredridel@nbtsc.org>**20060420053922] 
+hash: 0000000327-da211d8d429f0339a46263fe00de69653e39d063c1338395b675a5c566681a6a
+[Gurgitation integration
+Aredridel <aredridel@nbtsc.org>**20060420053957] 
+hash: 0000002688-c97c113923259cd447fb7c362d974bf484281d4031cfa96d96f43231ae97645f
+[Exit gracefully with --help
+Aredridel <aredridel@nbtsc.org>**20060420054453] 
+hash: 0000000130-573b9fb42635755900103b0621cb6d21306aaca266691dfc2fef0a3ce1810e88
+[TODOs
+Aredridel <aredridel@nbtsc.org>**20060420055059] 
+hash: 0000000086-d7263c75ce02700368ab1f934ac64f94acc1caaf4265137053ef27d90b509ef7
+[Fix integration errors
+Aredridel <aredridel@nbtsc.org>**20060423001023] 
+hash: 0000000842-ffa2207524275ecd48a90ddd2c99571ed84f9a594d11499a8884ef76d173622f
+[Solidify -request address detection
+Aredridel <aredridel@nbtsc.org>**20060423001235] 
+hash: 0000000509-cee2784387c55c68506e06a6fa5d72a9aeda10faeaf398ee75a49c17276f9605
+[Add delivery address option (as yet unused)
+Aredridel <aredridel@nbtsc.org>**20060423010836] 
+hash: 0000000552-6a7f33b660cdcfb46d522623fb98753ca31065db1cd1e349f33a14beb6555db4
+[Correct bounce address (or at least more so)
+Aredridel <aredridel@nbtsc.org>**20060423010910] 
+hash: 0000000232-62b713af1ca382cfcb6cd199df0e395c19ab078009772d0e537d49d94f10f92b
+[Add store message ability
+Aredridel <aredridel@nbtsc.org>**20060423010929] 
+hash: 0000000569-9c6b54a4fcbd9ed166e0dfc7c630879bc2e69ff32de34323610bc16685373faa
+[Reorganization for handling multiple actions per message
+Aredridel <aredridel@nbtsc.org>**20060427060547] 
+hash: 0000003705-7a0db4e3ecc4228032a555adaaff9ab849d76ef67bd50bd465cb622b00ca3499
+[Abstraction, Footers
+Aredridel <aredridel@nbtsc.org>**20060520031849] 
+hash: 0000002991-6143290afd6d021494a90c6af779ef68c98f4bbace4177956e1db10d6a400896
+[Report user errors more succinctly
+Aredridel <aredridel@nbtsc.org>**20060604003544] 
+hash: 0000000562-8757ab583d4fb0717ed5ea571f3b779301107925c2518a03a3116ee362fe57e8
+[Allow restriction of posting to only members of lists
+Aredridel <aredridel@nbtsc.org>**20060604003619] 
+hash: 0000000851-90f45e6b2eb51631e70455a938d8ff17febce528c17bb6caab159d2e4ced1daf
+[Handle capitalized list names properly
+Aredridel <aredridel@nbtsc.org>**20060604003721] 
+hash: 0000000340-9fb294b9ef2a37528601f50fab901a9079e841695ad484be1307ecf43d4f8906
+[old tag: 0.0.22
+Aredridel <aredridel@nbtsc.org>**20080606152257] 
+hash: 0000002414-d08036c3ab2b1d66c7a6e6cb2671c4180c41ed9d9dbef39bf0e26b43cc6bf5c5
+[Use From header to validate, not just envelope sender
+Aredridel <aredridel@nbtsc.org>**20080606165518] 
+hash: 0000000521-d3bab78c51f18b6dbde9393342256f2476d4f5533163a083cbe29cf1a90875df
+[old tag: 0.0.23
+Aredridel <aredridel@nbtsc.org>**20080606165539] 
+hash: 0000002586-2c5858def33e69774abef1f78e1cb0b388e00177152c57f35eab66791ef92845
+[remove debugging
+Aredridel <aredridel@nbtsc.org>**20080606171705] 
+hash: 0000000126-88e1540b547a9ddac6e5df65c1d6f667dffb683dcc65f6aefac1f29188187d6c
+[old tag: 0.0.23
+Aredridel <aredridel@nbtsc.org>**20080606171716] 
+hash: 0000002721-02fffd7a10ead83fe80463ca97a37f7c0c626a5fb566ed0c2dd6bb2fb621bfd5

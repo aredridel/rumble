@@ -1,0 +1,10 @@
+- Use more Gurgitate features -- perhaps all config done in Gurgitate style --
+per list included
+
+- Manpage
+
+- subscribe and unsubscribe handling
+
+- SQL-backed list handler
+
+- Testsuite!
